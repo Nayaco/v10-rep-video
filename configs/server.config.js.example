@@ -1,0 +1,11 @@
+
+var config_info = {
+
+    port: port-to-listen,
+
+    expire_time: heartbeat-expiretime,
+
+    log_path = path-you-want-store-your-log,
+}
+
+module.exports = config_info
