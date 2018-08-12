@@ -1,8 +1,8 @@
 'use strict'
 
-const Readable = require('stream').Readable;
-const Duplex = require('stream').Duplex;
-
+//const Readable = require('stream').Readable;
+//const Duplex = require('stream').Duplex;
+const PassThrough = require('stream').PassThrough;
 /*
 * @Params 
 *   str: String (The string you want to convert)
@@ -15,22 +15,22 @@ const Duplex = require('stream').Duplex;
 /// const stream = s2s('I am a cow', 'r');
 *
 */
-var string2Stream = (str, flag) =>{
+var string2Stream = (str) =>{
     if(typeof(str) != 'string')
         throw('s2s: type error');
-    var _flag = flag || 'r';
+    /*var _flag = flag || 'r';
     _flag = _flag === 'r' || _flag === 'd' ? _flag: 'r'; 
-    if(flag == 'r'){
-        var stream = new Readable();
-        stream.push(str);
-        stream.push(null);
-        return stream;
-    }else{
+    if(flag == 'r'){*/
+    var stream = new PassThrough();
+    stream.write(str);
+    stream.end;
+    return stream;
+    /*}else{
         var stream = new Duplex();
         stream.push(str);
         stream.push(null);
         return stream;
-    }
+    }*/
 }
 
 module.exports = string2Stream;
