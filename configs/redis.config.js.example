@@ -1,0 +1,11 @@
+
+var RedisConfig = {
+    Redis1: {
+        name: name-of-Redis1,
+        host: host-address,
+        port: host-port,
+    },
+    Redis2: {
+
+    },
+}
